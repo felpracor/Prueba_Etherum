@@ -1,6 +1,6 @@
 pragma solidity ^0.4.21;
 
-//Ejemplo SmartContract para poder almacenar un mensaje y devolverselo al usuario que lo necesite.
+//Ejemplo de SmartContract para poder almacenar un mensaje y devolverselo al usuario que lo necesite.
 contract MessageStore {
     
     //variable privada que define quien es el propietario del contrato. (address es tipo dirección)
@@ -12,11 +12,12 @@ contract MessageStore {
         owner = msg.sender;
     }
     
+	
     function setMessage(string newMessage) public {
         message = newMessage;
     }
     
-    //view --> ()nodificador para indicar al compilador que esto es solo para visualización, no requiere minar un bloque.
+    //view --> nodificador para indicar al compilador que esto es solo para visualización, no requiere minar un bloque.
     function getMessage() public view returns (string){
         return message;
     }
